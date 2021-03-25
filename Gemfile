@@ -72,3 +72,6 @@ gem 'redis', '~> 4.2', '>= 4.2.2'
 gem 'sidekiq', '~> 6.1'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
 gem 'whenever', require: false
+
+# fix 2021-03-25 gem license problem
+gem 'mimemagic', '~> 0.3.9'
