@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_220518) do
+ActiveRecord::Schema.define(version: 2021_03_25_204526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 2021_03_23_220518) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "backstage_articles", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "excerpt"
+    t.string "seo_page_title"
+    t.string "seo_description"
+    t.string "seo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "visibility"
+    t.datetime "publish_at"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

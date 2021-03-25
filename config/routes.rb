@@ -10,6 +10,12 @@ authenticate :user, lambda { |u| u.admin? } do
   end
 end
 
+namespace :backstage do
+  resources :articles
+end
+
+  resources :backstage, only: [:index]
+
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

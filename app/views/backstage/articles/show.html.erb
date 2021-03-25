@@ -1,0 +1,30 @@
+<div class="page-header">
+  <%= link_to backstage_articles_path, class: 'btn btn-default' do %>
+    All Backstage_articles
+  <% end %>
+  <%= link_to edit_backstage_article_path(@backstage_article), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show backstage_article</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @backstage_article.title %></dd>
+
+  <dt>Content:</dt>
+  <dd><%= @backstage_article.content %></dd>
+
+  <dt>Excerpt:</dt>
+  <dd><%= @backstage_article.excerpt %></dd>
+
+  <dt>Seo page title:</dt>
+  <dd><%= @backstage_article.seo_page_title %></dd>
+
+  <dt>Seo description:</dt>
+  <dd><%= @backstage_article.seo_description %></dd>
+
+  <dt>Seo url:</dt>
+  <dd><%= @backstage_article.seo_url %></dd>
+
+</dl>

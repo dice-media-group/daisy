@@ -1,0 +1,59 @@
+<%= form_with(model: backstage_article, local: true) do |form| %>
+  <% if backstage_article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(backstage_article.errors.count, "error") %> prohibited this backstage_article from being saved:</h2>
+
+      <ul>
+      <% backstage_article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_field :content, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :excerpt %>
+    <%= form.text_field :excerpt, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :seo_page_title %>
+    <%= form.text_field :seo_page_title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :seo_description %>
+    <%= form.text_field :seo_description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :seo_url %>
+    <%= form.text_field :seo_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if backstage_article.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', backstage_article, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if backstage_article.persisted? %>
+      <%= link_to "Cancel", backstage_article, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_articles_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
