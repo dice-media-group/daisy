@@ -1,0 +1,39 @@
+<%= form_with(model: backstage_page, local: true) do |form| %>
+  <% if backstage_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(backstage_page.errors.count, "error") %> prohibited this backstage_page from being saved:</h2>
+
+      <ul>
+      <% backstage_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.rich_text_area :body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if backstage_page.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', backstage_page, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if backstage_page.persisted? %>
+      <%= link_to "Cancel", backstage_page, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_pages_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

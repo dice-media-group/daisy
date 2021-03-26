@@ -64,6 +64,6 @@ class Backstage::ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def backstage_article_params
-      params.require(:backstage_article).permit(:title, :content, :excerpt, :seo_page_title, :seo_description, :seo_url)
+      params.require(:backstage_article).permit(:title, :body, :excerpt, :seo_page_title, :seo_description, :seo_url)
     end
 end
