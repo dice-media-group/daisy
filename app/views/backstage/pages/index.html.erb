@@ -1,0 +1,43 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Backstage_pages</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_backstage_page_path, class: 'btn btn-primary' do %>
+    Add New Page
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @backstage_pages.each do |backstage_page| %>
+        <%= content_tag :tr, id: dom_id(backstage_page), class: dom_class(backstage_page) do %>
+          
+
+                      <td><%= backstage_page.title %></td>
+          
+          
+            <td><%= link_to 'Show', backstage_page %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
